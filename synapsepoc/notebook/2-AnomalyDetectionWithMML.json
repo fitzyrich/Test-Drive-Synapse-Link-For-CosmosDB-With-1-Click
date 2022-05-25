@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "19",
 				"spark.dynamicAllocation.maxExecutors": "19",
-				"spark.autotune.trackingId": "d015d0a6-1694-483c-8821-4ef9e7cce980"
+				"spark.autotune.trackingId": "23324b55-721d-44a5-9b77-fd60b134985d"
 			}
 		},
 		"metadata": {
@@ -146,7 +146,7 @@
 					"                .load()\r\n",
 					"            )"
 				],
-				"execution_count": 38
+				"execution_count": 88
 			},
 			{
 				"cell_type": "markdown",
@@ -185,7 +185,7 @@
 					"                    .drop(\"timestamp\", \"value\")\n",
 					"                )"
 				],
-				"execution_count": 39
+				"execution_count": 89
 			},
 			{
 				"cell_type": "markdown",
@@ -227,7 +227,7 @@
 					"streamQuery.awaitTermination(180)\r\n",
 					"streamQuery.stop()"
 				],
-				"execution_count": 40
+				"execution_count": 90
 			},
 			{
 				"cell_type": "markdown",
@@ -267,7 +267,7 @@
 					"    .mode('append')\\\r\n",
 					"    .save()"
 				],
-				"execution_count": 41
+				"execution_count": 91
 			},
 			{
 				"cell_type": "code",
@@ -390,7 +390,7 @@
 					"\r\n",
 					"display(df_RPM_details)"
 				],
-				"execution_count": 50
+				"execution_count": 92
 			},
 			{
 				"cell_type": "markdown",
@@ -447,7 +447,7 @@
 					"p = plot(fig,output_type='div')\r\n",
 					"displayHTML(p)"
 				],
-				"execution_count": 52
+				"execution_count": 93
 			},
 			{
 				"cell_type": "markdown",
@@ -483,7 +483,7 @@
 					"                    .option(\"spark.cosmos.container\", \"IoTSignals\")\\\r\n",
 					"                    .load()"
 				],
-				"execution_count": 57
+				"execution_count": 94
 			},
 			{
 				"cell_type": "code",
@@ -502,7 +502,7 @@
 				"source": [
 					"display(df_IoTSignals)"
 				],
-				"execution_count": 58
+				"execution_count": 95
 			},
 			{
 				"cell_type": "markdown",
@@ -550,7 +550,7 @@
 					"plt.title('RPM TimeSeries')\r\n",
 					"plt.show()"
 				],
-				"execution_count": 59
+				"execution_count": 96
 			},
 			{
 				"cell_type": "markdown",
@@ -591,7 +591,7 @@
 					"\n",
 					"df_anomaly.createOrReplaceTempView('df_anomaly')"
 				],
-				"execution_count": 83
+				"execution_count": 97
 			},
 			{
 				"cell_type": "code",
@@ -610,7 +610,7 @@
 				"source": [
 					"display(df_anomaly)"
 				],
-				"execution_count": 84
+				"execution_count": 98
 			},
 			{
 				"cell_type": "markdown",
