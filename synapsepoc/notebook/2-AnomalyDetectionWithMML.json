@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "19",
 				"spark.dynamicAllocation.maxExecutors": "19",
-				"spark.autotune.trackingId": "b8905f75-ee9a-4f42-9b55-d0486190fec7"
+				"spark.autotune.trackingId": "d015d0a6-1694-483c-8821-4ef9e7cce980"
 			}
 		},
 		"metadata": {
@@ -106,9 +106,9 @@
 					}
 				},
 				"source": [
-					"Cognitive_Services_Key='4c3102fcb3e3437db8edf0ee1696493f'"
+					"Cognitive_Services_Key='c04bdf03c3a14f20b6043403ccf3ee21'"
 				],
-				"execution_count": 37
+				"execution_count": 76
 			},
 			{
 				"cell_type": "markdown",
@@ -575,6 +575,7 @@
 					"\n",
 					"anomaly_detector = (SimpleDetectAnomalies()\n",
 					"                            .setSubscriptionKey(Cognitive_Services_Key)\n",
+					"                            #.setUrl(\"https://eastus.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect\")\n",
 					"                            .setLocation('eastus') ##Optional, Update If Required\n",
 					"                            .setOutputCol(\"anomalies\")\n",
 					"                            .setGroupbyCol(\"grouping\")\n",
@@ -590,7 +591,7 @@
 					"\n",
 					"df_anomaly.createOrReplaceTempView('df_anomaly')"
 				],
-				"execution_count": 67
+				"execution_count": 83
 			},
 			{
 				"cell_type": "code",
@@ -609,7 +610,7 @@
 				"source": [
 					"display(df_anomaly)"
 				],
-				"execution_count": 71
+				"execution_count": 84
 			},
 			{
 				"cell_type": "markdown",
