@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "19",
 				"spark.dynamicAllocation.maxExecutors": "19",
-				"spark.autotune.trackingId": "007facdb-074c-4638-8017-cbf6cff09379"
+				"spark.autotune.trackingId": "b8905f75-ee9a-4f42-9b55-d0486190fec7"
 			}
 		},
 		"metadata": {
@@ -575,7 +575,7 @@
 					"\n",
 					"anomaly_detector = (SimpleDetectAnomalies()\n",
 					"                            .setSubscriptionKey(Cognitive_Services_Key)\n",
-					"                            .setLocation('southcentralus') ##Optional, Update If Required\n",
+					"                            .setLocation('eastus') ##Optional, Update If Required\n",
 					"                            .setOutputCol(\"anomalies\")\n",
 					"                            .setGroupbyCol(\"grouping\")\n",
 					"                            .setSensitivity(95)\n",
@@ -590,7 +590,7 @@
 					"\n",
 					"df_anomaly.createOrReplaceTempView('df_anomaly')"
 				],
-				"execution_count": 60
+				"execution_count": 67
 			},
 			{
 				"cell_type": "code",
@@ -609,7 +609,7 @@
 				"source": [
 					"display(df_anomaly)"
 				],
-				"execution_count": 61
+				"execution_count": 71
 			},
 			{
 				"cell_type": "markdown",
