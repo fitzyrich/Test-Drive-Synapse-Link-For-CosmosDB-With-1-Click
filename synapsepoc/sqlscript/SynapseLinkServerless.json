@@ -1,0 +1,17 @@
+{
+	"name": "SynapseLinkServerless",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP 10 *\nFROM OPENROWSET( \n       'CosmosDB',\n       'Account=synpaselinkcosmosdb;Database=CosmosDemoDB;Key=zHQRxw0fAZwIEG5rILKn89xc1gaJvw8KYPaDAJF1Odv8PqFpEWHS7QsLfwSxL3e3eesjz6RXxdpngMMZTddenw==',\n       RetailSales) as RetailSales\n\nCreate DATABASE mydatabase;\nGo\n\nCREATE CREDENTIAL MyCosmosDbAccountCredential\nWITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'zHQRxw0fAZwIEG5rILKn89xc1gaJvw8KYPaDAJF1Odv8PqFpEWHS7QsLfwSxL3e3eesjz6RXxdpngMMZTddenw==';\nGO\n\nUSE mydatabase;\nGO \n\nCREATE OR ALTER VIEW RetailSalesView\nAS SELECT *\nFROM OPENROWSET(\n      PROVIDER = 'CosmosDB',\n      CONNECTION = 'Account=synpaselinkcosmosdb;Database=CosmosDemoDB',\n      OBJECT = 'RetailSales',\n      SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'\n    ) with ( productCode varchar(255), quantity int, price int) as rows;\n\nselect * from RetailSalesView",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "mydatabase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
