@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "cce1d002-ef3b-4880-9f5a-d7311d1df89c"
+				"spark.autotune.trackingId": "37cf60c0-055e-41ba-b37f-9e286e6fc314"
 			}
 		},
 		"metadata": {
@@ -223,6 +223,31 @@
 				"execution_count": 14
 			},
 			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"select * from RetailSalesDB.RetailSales \r\n",
+					"where id = '2b306cb3-e125-4afe-b7c0-5f3ee42eb2d3'\r\n",
+					"limit 10"
+				],
+				"execution_count": 8
+			},
+			{
 				"cell_type": "markdown",
 				"metadata": {
 					"nteract": {
@@ -270,7 +295,7 @@
 					"\n",
 					"display(data)"
 				],
-				"execution_count": 17
+				"execution_count": 3
 			},
 			{
 				"cell_type": "markdown",
